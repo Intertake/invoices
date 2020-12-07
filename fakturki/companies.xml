@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Companies xmlns="CompanySchema">
+  <Company NIP="9876543">
+    <name>Testowa</name>
+    <city>Poznan</city>
+    <post_code>61000</postcode>
+    <street>Palacza</street>
+  </company>
+  <Company NIP="12345678">
+    <name>FUBaba</name>
+    <city>Poznan</city>
+    <post_code>62000</postcode>
+    <street>Ratajczaka</street>
+  </company>
+  <Company NIP="5436758">
+    <name>Isam</name>
+    <city>Poznan</city>
+    <post_code>61000</postcode>
+    <street>Browar</street>
+  </company>
+  </companies>
