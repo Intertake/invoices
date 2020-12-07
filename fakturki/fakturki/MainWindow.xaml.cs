@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace fakturki
 {
@@ -20,6 +22,7 @@ namespace fakturki
     /// </summary>
     public partial class MainWindow : Window
     {
+        const string pathdir = @"C:\Users\Filip\Documents\companies.xml";
         public MainWindow()
         {
             InitializeComponent();
@@ -27,13 +30,34 @@ namespace fakturki
             //Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth;
             Application.Current.MainWindow.Height = 1080;
             Application.Current.MainWindow.Width = 1920;
+            
 
 
         }
 
+        private void add_company_Click(object sender, RoutedEventArgs e)
+        {
+            var addcom = new AddCompany();
+            addcom.Show();
+           
+            
+           
+        }
+
+      
+
+        private void datagrid1_Initialized(object sender, EventArgs e)
+        {
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
 
 
 
+            //string sampleXmlFile = path;
+            //DataSet dataSet = new DataSet();
+            //dataSet.ReadXml(sampleXmlFile);
+            //DataView dataView = new DataView(dataSet.Tables[0]);
+            //datagrid1.ItemsSource = dataView;
+        }
     }
 }
 

@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fakturki"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Faktury" Height="450" Width="800">
     <Grid>
-        
+
+        <Button x:Name="add_company" Content="Dodaj firme" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="add_company_Click"/>
+        <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" Height="152" Margin="39,82,0,0" VerticalAlignment="Top" Width="419" Initialized="datagrid1_Initialized">
+            
+        </DataGrid>
+        <Label x:Name="testowylabel" Content="Label" HorizontalAlignment="Left" Margin="512,105,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>
