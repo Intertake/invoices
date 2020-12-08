@@ -3,19 +3,25 @@
   <Company NIP="9876543">
     <name>Testowa</name>
     <city>Poznan</city>
-    <post_code>61000</postcode>
+    <post_code>61000</post_code>
     <street>Palacza</street>
-  </company>
+  </Company>
   <Company NIP="12345678">
     <name>FUBaba</name>
     <city>Poznan</city>
-    <post_code>62000</postcode>
+    <post_code>62000</post_code>
     <street>Ratajczaka</street>
-  </company>
+  </Company>
   <Company NIP="5436758">
     <name>Isam</name>
     <city>Poznan</city>
-    <post_code>61000</postcode>
+    <post_code>61000</post_code>
     <street>Browar</street>
-  </company>
-  </companies>
+  </Company>
+  <Company NIP="asdkjh" xmlns="">
+    <name>12091823</name>
+    <city>Poznan</city>
+    <post_code>124341</post_code>
+    <street>papacz</street>
+  </Company>
+</Companies>

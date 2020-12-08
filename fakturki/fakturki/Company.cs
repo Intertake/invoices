@@ -11,7 +11,7 @@ namespace fakturki
     {
 
 
-        const string pathdir = @"C:\Users\Filip\Documents\companies.xml";      
+        const string pathdir = @"C:\Users\Filip\Documents\invoices\fakturki\companies.xml";
         public string Name;
         public int NIP;
         public string City;
@@ -32,7 +32,6 @@ namespace fakturki
 
 
         }
-       
-      
+        
     }
 }

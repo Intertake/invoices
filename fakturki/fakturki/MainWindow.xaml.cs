@@ -22,7 +22,7 @@ namespace fakturki
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string pathdir = @"C:\Users\Filip\Documents\companies.xml";
+        const string pathdir = @"C:\Users\Filip\Documents\invoices\fakturki\companies.xml";
         public MainWindow()
         {
             InitializeComponent();
