@@ -8,7 +8,8 @@
         Title="Dodaj frimę" Height="450" Width="800">
     <Grid>
         <Grid HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
-            <Button Content="Button" HorizontalAlignment="Left" Margin="325,242,0,0" VerticalAlignment="Top" Width="184" Click="Button_Click"/>
+            <Button x:Name="Button" Content="dodaj firme" HorizontalAlignment="Left" Margin="358,84,0,0" VerticalAlignment="Top" Width="184" Click="Button_Click"/>
+            <Button Content="usun firme" HorizontalAlignment="Left" Margin="358,131,0,0" VerticalAlignment="Top" Width="184" RenderTransformOrigin="0.496,0.51" Height="24" Click="Button_Click_1"/>
         </Grid>
 
 

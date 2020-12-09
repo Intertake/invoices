@@ -18,6 +18,7 @@ using System.IO;
 using System.Xml.Linq;
 using System.Xml;
 
+
 namespace fakturki
 {
     /// <summary>
@@ -30,12 +31,12 @@ namespace fakturki
         public AddCompany()
         {
             InitializeComponent();
-            
+
         }
 
-      
 
-        
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -66,21 +67,59 @@ namespace fakturki
             //     "  </company>\n" +
             //     "  </companies>\n"  );
             //}
-            
-          
-           
+
+
+
 
 
             Company firma1 = new Company();
-            firma1.addCompany( "asdkjh", 12091823, "Poznan", 124341, "papacz");
+            firma1.addCompany("asdkjh", 12091823, "Poznan", 124341, "papacz");
 
             XmlProp test = new XmlProp();
-            test.AddNewCompany(firma1.Name, Convert.ToString(firma1.NIP), firma1.City, Convert.ToString(firma1.Post_code), firma1.Street, docCompany);
+            test.AddNewCompany(Convert.ToString(firma1.NIP), firma1.Name, firma1.City, Convert.ToString(firma1.Post_code), firma1.Street, docCompany);
 
 
             docCompany.Save(pathdir);
         }
 
-       
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            XDocument docCompany1 = XDocument.Load(pathdir);
+
+            var deleteQuery = from r in docCompany1.Descendants("Company") where r.Attribute("NIP").Value == "12091823" select r;
+; 
+                foreach (var query in deleteQuery)
+                {
+                    query.Element("name").Remove();
+                    query.Element("city").Remove();
+                    query.Element("post_code").Remove();
+                    query.Element("street").Remove();
+                    
+                }
+            deleteQuery.Remove();
+
+            docCompany1.Save(pathdir);
+              
+
+
+
+
+
+
+
+
+
+//                XmlNode nodes1= docCompany1.SelectSingleNode("//Company/street[.='Browar']"
+//);
+
+
+//            XmlNode nodes = docCompany1.SelectSingleNode("//Company[street=Browar]");
+//            nodes1.ParentNode.RemoveChild(nodes1);
+
+
+//            docCompany1.Save(pathdir);
+
+
+        }
     }
 }

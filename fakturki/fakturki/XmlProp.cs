@@ -193,6 +193,12 @@ namespace fakturki
 
 
         }
+        public void deleteCompany(int nip)
+        {
+            
+
+
+        }
 
     }
 }

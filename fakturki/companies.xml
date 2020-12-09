@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Companies xmlns="CompanySchema">
   <Company NIP="9876543">
     <name>Testowa</name>
@@ -17,11 +17,5 @@
     <city>Poznan</city>
     <post_code>61000</post_code>
     <street>Browar</street>
-  </Company>
-  <Company NIP="asdkjh" xmlns="">
-    <name>12091823</name>
-    <city>Poznan</city>
-    <post_code>124341</post_code>
-    <street>papacz</street>
   </Company>
 </Companies>
