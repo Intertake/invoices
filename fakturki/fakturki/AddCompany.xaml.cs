@@ -17,7 +17,7 @@ using System.Xml.Serialization;
 using System.IO;
 using System.Xml.Linq;
 using System.Xml;
-
+using System.Data;
 
 namespace fakturki
 {
@@ -25,101 +25,59 @@ namespace fakturki
     /// Interaction logic for AddCompany.xaml
     /// </summary>
     public partial class AddCompany : Window
-    {
+    { 
 
         const string pathdir = @"C:\Users\Filip\Documents\invoices\fakturki\companies.xml";
         public AddCompany()
         {
             InitializeComponent();
 
+
+            string sampleXmlFile = pathdir;
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXml(sampleXmlFile);
+            DataView dataView = new DataView(dataSet.Tables[0]);
+            CompanyDataView.ItemsSource = dataView;
         }
-
-
-
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddCompanyButton_Click(object sender, RoutedEventArgs e)
         {
             XmlDocument docCompany = new XmlDocument();
-            docCompany.Load(pathdir);
-            //try { docCompany.Load(pathdir); }
-            //catch (FileNotFoundException)
-            //{
-            //    docCompany.LoadXml( "<?xml version=\"1.0\"?> \n" +
-            //    "<Companies xmlns=\"CompanySchema\">\n" +
-            //     "  <Company NIP=\"9876543\">\n" +
-            //     "    <name>Testowa</name>\n" +
-            //     "    <city>Poznan</city>\n" +
-            //     "    <post_code>61000</postcode>\n" +
-            //     "    <street>Palacza</street>\n" +
-            //     "  </company>\n" +
-            //     "  <Company NIP=\"12345678\">\n" +
-            //     "    <name>FUBaba</name>\n" +
-            //     "    <city>Poznan</city>\n" +
-            //     "    <post_code>62000</postcode>\n" +
-            //     "    <street>Ratajczaka</street>\n" +
-            //     "  </company>\n" +
-            //     "  <Company NIP=\"5436758\">\n" +
-            //     "    <name>Isam</name>\n" +
-            //     "    <city>Poznan</city>\n" +
-            //     "    <post_code>61000</postcode>\n" +
-            //     "    <street>Browar</street>\n" +
-            //     "  </company>\n" +
-            //     "  </companies>\n"  );
-            //}
+            try { docCompany.Load(pathdir); }
+            catch (FileNotFoundException)
+            {
+                docCompany.LoadXml("<?xml version=\"1.0\"?> \n" +
+                "<Companies xmlns=\"CompanySchema\">\n" +
+                 "  <Company NIP=\"9876543\">\n" +
+                 "    <name>Testowa</name>\n" +
+                 "    <city>Poznan</city>\n" +
+                 "    <post_code>61000</postcode>\n" +
+                 "    <street>Palacza</street>\n" +
+                 "  </company>\n" +
+                 "  <Company NIP=\"12345678\">\n" +
+                 "    <name>FUBaba</name>\n" +
+                 "    <city>Poznan</city>\n" +
+                 "    <post_code>62000</postcode>\n" +
+                 "    <street>Ratajczaka</street>\n" +
+                 "  </company>\n" +
+                 "  <Company NIP=\"5436758\">\n" +
+                 "    <name>Isam</name>\n" +
+                 "    <city>Poznan</city>\n" +
+                 "    <post_code>61000</postcode>\n" +
+                 "    <street>Browar</street>\n" +
+                 "  </company>\n" +
+                 "  </companies>\n");
+            }
 
-
-
-
-
-            Company firma1 = new Company();
-            firma1.addCompany("asdkjh", 12091823, "Poznan", 124341, "papacz");
-
-            XmlProp test = new XmlProp();
-            test.AddNewCompany(Convert.ToString(firma1.NIP), firma1.Name, firma1.City, Convert.ToString(firma1.Post_code), firma1.Street, docCompany);
+            Company Company1 = new Company();
+            Company1.AddNewCompanyToXml(CompanyNipBox.Text, CompanyNameBox.Text, CompanyCityBox.Text, CompanyPostCodeBox.Text, CompanyStreetBox.Text, docCompany);
 
 
             docCompany.Save(pathdir);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            XDocument docCompany1 = XDocument.Load(pathdir);
-
-            var deleteQuery = from r in docCompany1.Descendants("Company") where r.Attribute("NIP").Value == "12091823" select r;
-; 
-                foreach (var query in deleteQuery)
-                {
-                    query.Element("name").Remove();
-                    query.Element("city").Remove();
-                    query.Element("post_code").Remove();
-                    query.Element("street").Remove();
-                    
-                }
-            deleteQuery.Remove();
-
-            docCompany1.Save(pathdir);
-              
-
-
-
-
-
-
-
-
-
-//                XmlNode nodes1= docCompany1.SelectSingleNode("//Company/street[.='Browar']"
-//);
-
-
-//            XmlNode nodes = docCompany1.SelectSingleNode("//Company[street=Browar]");
-//            nodes1.ParentNode.RemoveChild(nodes1);
-
-
-//            docCompany1.Save(pathdir);
+            Company1.RefreshCompany(pathdir, CompanyDataView);
 
 
         }
+
+        
     }
 }

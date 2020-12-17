@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:fakturki"
         mc:Ignorable="d"
-        Title="Dodaj frimę" Height="450" Width="800">
+        Title="Dodaj firmę" Height="600" Width="900">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
-            <Button x:Name="Button" Content="dodaj firme" HorizontalAlignment="Left" Margin="358,84,0,0" VerticalAlignment="Top" Width="184" Click="Button_Click"/>
-            <Button Content="usun firme" HorizontalAlignment="Left" Margin="358,131,0,0" VerticalAlignment="Top" Width="184" RenderTransformOrigin="0.496,0.51" Height="24" Click="Button_Click_1"/>
+        <Grid HorizontalAlignment="Left" Height="549" Margin="10,10,0,0" VerticalAlignment="Top" Width="872">
+            <Button x:Name="AddCompanyButton" Content="Dodaj firmę" HorizontalAlignment="Left" Margin="64,323,0,0" VerticalAlignment="Top" Width="184" Click="AddCompanyButton_Click"/>
+            <TextBox x:Name="CompanyNipBox" HorizontalAlignment="Left" Height="23" Margin="180,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="CompanyNameBox" HorizontalAlignment="Left" Height="23" Margin="180,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="CompanyCityBox" HorizontalAlignment="Left" Height="23" Margin="180,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="CompanyPostCodeBox" HorizontalAlignment="Left" Height="23" Margin="180,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="CompanyStreetBox" HorizontalAlignment="Left" Height="23" Margin="180,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="CompanyNipLabel" Content="NIP" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="38" Width="100" FontSize="20"/>
+            <Label x:Name="CompanyNameLabel" Content="Nazwa firmy" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="CompanyCityLabel" Content="Miasto" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="CompanyPostCodeLabel" Content="Kod pocztowy" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <Label x:Name="CompanyStreetLabel" Content="Ulica" HorizontalAlignment="Left" Margin="10,236,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <DataGrid x:Name="CompanyDataView" HorizontalAlignment="Left" Height="526" Margin="367,23,0,0" VerticalAlignment="Top" Width="505"/>
         </Grid>
 
 

@@ -23,6 +23,8 @@ namespace fakturki
     public partial class MainWindow : Window
     {
         const string pathdir = @"C:\Users\Filip\Documents\invoices\fakturki\companies.xml";
+        double NIPtest;
+        DataView dataView;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,7 +32,13 @@ namespace fakturki
             //Application.Current.MainWindow.Width = SystemParameters.PrimaryScreenWidth;
             Application.Current.MainWindow.Height = 1080;
             Application.Current.MainWindow.Width = 1920;
-            
+
+
+            string sampleXmlFile = pathdir;
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXml(sampleXmlFile);
+            dataView = new DataView(dataSet.Tables[0]);
+            datatest.ItemsSource = dataView;
 
 
         }
@@ -39,25 +47,38 @@ namespace fakturki
         {
             var addcom = new AddCompany();
             addcom.Show();
+            
            
             
            
         }
+       
 
-      
-
-        private void datagrid1_Initialized(object sender, EventArgs e)
+        private void datatest_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";
 
+           
 
-
-            //string sampleXmlFile = path;
-            //DataSet dataSet = new DataSet();
-            //dataSet.ReadXml(sampleXmlFile);
-            //DataView dataView = new DataView(dataSet.Tables[0]);
-            //datagrid1.ItemsSource = dataView;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView testindex = (DataRowView)datatest.SelectedItem;
+            NIPtest = Convert.ToDouble(testindex.Row[4]);
+
+            testowylabel.Content = NIPtest;
+
+            Company test = new Company();
+
+            test.delCompany(NIPtest);
+
+            test.RefreshCompany(pathdir, datatest);
+           
+            
+        }
+
+        
     }
-}
+    }
+
 
