@@ -23,8 +23,6 @@ namespace fakturki
     public partial class MainWindow : Window
     {
         const string pathdir = @"C:\Users\Filip\Documents\invoices\fakturki\companies.xml";
-        double NIPtest;
-        DataView dataView;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,11 +32,11 @@ namespace fakturki
             Application.Current.MainWindow.Width = 1920;
 
 
-            string sampleXmlFile = pathdir;
-            DataSet dataSet = new DataSet();
-            dataSet.ReadXml(sampleXmlFile);
-            dataView = new DataView(dataSet.Tables[0]);
-            datatest.ItemsSource = dataView;
+            //string sampleXmlFile = pathdir;
+            //DataSet dataSet = new DataSet();
+            //dataSet.ReadXml(sampleXmlFile);
+            //dataView = new DataView(dataSet.Tables[0]);
+            //datatest.ItemsSource = dataView;
 
 
         }
@@ -46,38 +44,16 @@ namespace fakturki
         private void add_company_Click(object sender, RoutedEventArgs e)
         {
             var addcom = new AddCompany();
-            addcom.Show();
-            
-           
-            
-           
+            addcom.Show();         
+                      
         }
-       
-
-        private void datatest_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void DelCompanyButton_Click(object sender, RoutedEventArgs e)
         {
-
-           
-
+            var delcom = new DelCompany();
+            delcom.Show();            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView testindex = (DataRowView)datatest.SelectedItem;
-            NIPtest = Convert.ToDouble(testindex.Row[4]);
-
-            testowylabel.Content = NIPtest;
-
-            Company test = new Company();
-
-            test.delCompany(NIPtest);
-
-            test.RefreshCompany(pathdir, datatest);
-           
-            
-        }
-
-        
+     
     }
     }
 

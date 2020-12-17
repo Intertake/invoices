@@ -29,4 +29,6 @@ C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\fakturki.g.resourc
 C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\fakturki.Properties.Resources.resources
 C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\fakturki.csproj.GenerateResource.cache
 C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\fakturki.csproj.CoreCompileInputs.cache
+C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\DelCompany.g.cs
+C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\DelCompany.baml
 C:\Users\Filip\Documents\invoices\fakturki\fakturki\obj\Debug\fakturki.csprojAssemblyReference.cache

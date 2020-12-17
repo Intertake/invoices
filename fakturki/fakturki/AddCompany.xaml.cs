@@ -16,7 +16,6 @@ using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
 using System.Xml.Linq;
-using System.Xml;
 using System.Data;
 
 namespace fakturki
@@ -37,7 +36,7 @@ namespace fakturki
             DataSet dataSet = new DataSet();
             dataSet.ReadXml(sampleXmlFile);
             DataView dataView = new DataView(dataSet.Tables[0]);
-            CompanyDataView.ItemsSource = dataView;
+            AddCompanyDataView.ItemsSource = dataView;
         }
         private void AddCompanyButton_Click(object sender, RoutedEventArgs e)
         {
@@ -73,7 +72,7 @@ namespace fakturki
 
 
             docCompany.Save(pathdir);
-            Company1.RefreshCompany(pathdir, CompanyDataView);
+            Company1.RefreshCompany(pathdir, AddCompanyDataView);
 
 
         }

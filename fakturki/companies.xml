@@ -1,45 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Companies xmlns="CompanySchema">
-  <Company NIP="12345678" xmlns="">
-    <name>FUBaba</name>
-    <city>Poznan</city>
-    <post_code>62000</post_code>
-    <street>Ratajczaka</street>
-  </Company>
-  <Company NIP="5436758" xmlns="">
-    <name>Isam</name>
-    <city>Poznan</city>
-    <post_code>61000</post_code>
-    <street>Browar</street>
-  </Company>
-  <Company NIP="6+45654" xmlns="">
+  <Company NIP="645654" xmlns="">
     <name>654765</name>
     <city>tfdnfd</city>
     <post_code>jfgjhgf</post_code>
     <street>hgfdhgf</street>
   </Company>
-  <Company NIP="6+45654" xmlns="">
+  <Company NIP="645654" xmlns="">
     <name>654765</name>
     <city>tfdnfd</city>
     <post_code>jfgjhgf</post_code>
     <street>hgfdhgf</street>
   </Company>
-  <Company NIP="74651209" xmlns="">
-    <name>testowa </name>
-    <city>testow</city>
-    <post_code>63-000</post_code>
-    <street>pozna</street>
-  </Company>
-  <Company NIP="74651209" xmlns="">
-    <name>testowa </name>
-    <city>testow</city>
-    <post_code>63-000</post_code>
-    <street>pozna</street>
-  </Company>
-  <Company NIP="74651209" xmlns="">
-    <name>testowa asda</name>
-    <city>testowasda</city>
-    <post_code>63-000654</post_code>
-    <street>poznasa</street>
+  <Company NIP="7862425151" xmlns="">
+    <name>aksjdhadb</name>
+    <city>ncskdjch</city>
+    <post_code>dnclsdkc</post_code>
+    <street>ncdslckn</street>
   </Company>
 </Companies>

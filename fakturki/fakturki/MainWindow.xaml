@@ -9,9 +9,8 @@
     <Grid>
 
         <Button x:Name="add_company" Content="Dodaj firme" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="110" Height="40" Click="add_company_Click"/>
-        <DataGrid x:Name="datatest" HorizontalAlignment="Left" Height="327" Margin="10,82,0,0" VerticalAlignment="Top" Width="446" SelectedIndex="0" IsReadOnly="True" SelectionChanged="datatest_SelectionChanged"/>
         <Label x:Name="testowylabel" Content="Label" HorizontalAlignment="Left" Margin="512,105,0,0" VerticalAlignment="Top"/>
-        <Button Content="Usun" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top" Width="115" Click="Button_Click" Height="40"/>
+        <Button x:Name="DelCompanyButton" Content="Usun" HorizontalAlignment="Left" Margin="125,10,0,0" VerticalAlignment="Top" Width="115" Click="DelCompanyButton_Click" Height="40"/>
 
     </Grid>
 </Window>
